@@ -1,0 +1,52 @@
+<ion-view title="Mon stock" cache-view="false">
+  <div ng-app="starter">
+
+    <ion-content padding="true" class="has-header">
+      <ul class="list" ng-repeat="stock in data.listStock | filter:motcle">
+
+        <li>
+          <div class="list card">
+
+            <div class="item item-avatar">
+              
+              <img src="http://test-test.h-tsoft.com/{{stock.image}}" style="width:40%; height: 70%;">
+              <div class="row">
+                <div class="col">
+                  Code
+                </div>
+                <div class="col" style="font-weight: bold;">
+                  {{ stock.codeArticle }}
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col">
+                  Quantité
+                </div>
+                <div class="col" style="font-weight: bold;">
+                  {{ stock.quantite }}
+                </div>
+              </div>
+              <!--<h2>Code :{{ stock.codeArticle }}</h2>
+              <p>Quantité: {{ stock.quantite }}</p>-->
+            </div>
+
+            <div class="item item-body">
+              <p>
+                {{ stock.libelle }}
+              </p>
+              
+            </div>
+
+          </div>
+        </li>
+    </ul>
+
+
+    </ion-content>
+  </div>
+  <div  class="bar bar-footer footer-button">
+    <button ng-click="submit()" class="button button-block button-assertive footer-button" color="danger" type="submit"
+      name="submit"><span style="color:white">Synchronisation</span></button>
+  </div>
+  </ion-view>
